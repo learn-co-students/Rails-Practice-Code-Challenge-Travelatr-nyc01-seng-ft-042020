@@ -3,6 +3,8 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @bloggers = Blogger.all
+    @destinations = Destination.all
   end
 
   def create
@@ -19,6 +21,8 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @bloggers = Blogger.all
+    @destinations = Destination.all
   end
 
   def update

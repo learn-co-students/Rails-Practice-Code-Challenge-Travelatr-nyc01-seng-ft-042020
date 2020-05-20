@@ -9,10 +9,10 @@
     <%= f.number_field :likes %><br/>
 
     <%= f.label :blogger_id, 'writer' %><br/>
-    <%= f.collection_select :blogger_id, Blogger.all, :id, :name %><br/>
+    <%= f.collection_select :blogger_id, @bloggers, :id, :name %><br/>
 
     <%= f.label :destination_id %><br/>
-    <%= f.collection_select :destination_id, Destination.all, :id, :name %><br/>
+    <%= f.collection_select :destination_id, @destinations, :id, :name %><br/>
 
     <%= f.submit %>
     

@@ -1,0 +1,27 @@
+<h1>Update Post</h1>
+
+<% if flash[:my_errors] %>
+    <% flash[:my_errors].each do |error| %>
+    <p><%= error %></p>
+    <% end %>
+
+<% end %>
+
+<%= form_for @post do |f| %>
+<p><%= f.label :title, "Title" %></p>
+<%= f.text_field :title %>
+
+<p> <%= f.label :content, "Content" %></p>
+<%= f.text_area :content %>
+
+<p><%= f.label :likes, "Likes" %></p>
+<%= f.number_field :likes %>
+
+<p><%= f.label :blogger, "Blogger" %></p>
+<%= f.collection_select(:blogger, @bloggers, :id, :name) %>
+
+<p><%= f.label :destination, "Destination" %></p>
+<%= f.collection_select(:destination, @destinations, :id, :name) %>
+
+<p><%= f.submit %>
+<% end %>

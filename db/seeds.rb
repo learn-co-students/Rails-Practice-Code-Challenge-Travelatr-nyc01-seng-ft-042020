@@ -5,8 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "destroy destinations"
+Destination.destroy_all
 
+puts "destroy blogger"
+Blogger.destroy_all
 
+puts "destroy posts"
+Post.destroy_all
+
+puts "create destination"
 30.times do 
   Destination.create({
     name: Faker::GameOfThrones.city,
@@ -14,7 +22,7 @@
   })
 end
 
-
+puts "create blogger"
 10.times do
   blogger = Blogger.create({
     name: Faker::Name.name,
@@ -26,7 +34,7 @@ end
     Post.create({
       title: Faker::Hipster.sentence(3),
       content: Faker::Hipster.paragraphs(4),
-      likes: 0,
+      likes: rand(0..10),
       blogger: blogger,
       destination: Destination.all.sample
     })

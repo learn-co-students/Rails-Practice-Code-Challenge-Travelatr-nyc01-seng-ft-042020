@@ -1,0 +1,13 @@
+<h1>Post</h1>
+
+<h3>Title: <%= @post.title %> </h3>
+
+<h5>Content: <%= @post.content %></h5>
+
+
+<h5>Author: <%= link_to @post.blogger.name, blogger_path(@post.blogger.id) %> </h5>
+
+<h5>Destination: <%= link_to @post.destination.name, destination_path(@post.destination.id) %>  </h5>
+
+button
+

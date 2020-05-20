@@ -1,0 +1,15 @@
+<h1><%= @destination.name %></h1>
+
+<h2>Recent</h2>
+<% posts = @destination.posts.last(5).reverse %>
+<% posts.each do |post| %>
+<%= link_to post.title, post_path(post) %>
+<% end %>
+
+<h2>Featured Post</h2>
+<% if @destination.featured_post %>
+<%= link_to @destination.featured_post.title, post_path(@destination.featured_post) %>
+<% end %>
+
+<h2>Average Age</h2>
+<%= @destination.average_age %>

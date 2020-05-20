@@ -1,0 +1,13 @@
+<h1>Destinations</h1>
+
+<h5>Most Recent posts: </h5>
+    <ol>
+        <% @destination.recent_posts.each do |post| %>
+            <li><%= post %></li>
+        <% end %>
+    </ol>
+
+<h5>Featured Post:</h5>
+    <%= @destination.featured_post %>
+
+<h5>Average Age of Bloggers: <%= @destination.average_age %></h5>

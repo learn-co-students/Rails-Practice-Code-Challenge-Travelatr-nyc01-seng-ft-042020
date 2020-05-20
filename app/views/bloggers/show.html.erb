@@ -1,0 +1,10 @@
+<h1> <%= @blogger.name %></h1>
+
+<h3>Total Likes: <%= @blogger.total_likes %> </h3>
+<h3>Featured Post:
+<% if @blogger.featured_post.nil?  %>
+    <h4> There are no posts! </h4>
+   <% else %> 
+    <h3><%= link_to @blogger.featured_post.title, post_path(@blogger.featured_post) %> </h3>
+    <% end %>
+    

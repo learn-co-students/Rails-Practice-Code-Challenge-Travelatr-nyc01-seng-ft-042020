@@ -1,0 +1,9 @@
+<h1>Destination</h1>
+
+<p>Recent Posts for <%= @destination.name %></p>
+<% @destination.last_five.each do |post| %>
+<p><%= link_to post.title, post_path(post.id) %></p>
+<% end %>
+
+<p>Average Age of the Bloggers for this Destination</p>
+<%= @destination.avg_age %>

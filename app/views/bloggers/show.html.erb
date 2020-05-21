@@ -1,0 +1,4 @@
+<h1>Welcome to <%= @blogger.name %>'s Page</h1>
+
+<h4>Total Likes:  <%= @blogger.total_likes %></h4>
+<h4>Featured Post: <%= link_to @blogger.most_likes.title, post_path(@blogger.most_likes.id) %></h4>
